@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Renzo Villafuerte Tapia | Portafolio</title>
+  <meta name="description" content="Portafolio de Renzo Villafuerte Tapia, estudiante de Ingeniería de Software. APIs, aplicaciones web y móviles con arquitectura hexagonal y DDD.">
+  <meta name="theme-color" content="#F3F5F9">
+  <meta property="og:title" content="Renzo Villafuerte Tapia | Portafolio">
+  <meta property="og:description" content="Estudiante de Ingeniería de Software. APIs, aplicaciones web y móviles.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido" data-i18n="skip">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="wordmark" href="#inicio" translate="no">Renzo VT</a>
+      <nav aria-label="Principal" data-i18n-attr="aria-label:navLabel">
+        <ul class="nav-list">
+          <li><a href="#proyectos" data-i18n="navProjects">Proyectos</a></li>
+          <li><a href="#stack" data-i18n="navStack">Stack</a></li>
+          <li><a href="#contacto" data-i18n="navContact">Contacto</a></li>
+          <li><a class="lang-switch" id="lang-switch" href="?lang=en" hreflang="en" lang="en">English</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero wrap" id="inicio">
+      <h1 class="hero-name" translate="no">Renzo Villafuerte Tapia</h1>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="hero-lead" data-i18n="heroLead">Estudiante de Ingeniería de Software. Diseño y construyo sistemas completos: la API, la web y la app móvil.</p>
+          <p class="hero-note" data-i18n="heroNote">El diagrama es la arquitectura real de VetCare, el proyecto en el que trabajo ahora. Toca cada pieza para ver cómo está hecha.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#proyectos" data-i18n="ctaProjects">Ver proyectos</a>
+            <a class="btn btn-quiet" href="#contacto" data-i18n="ctaContact">Escribirme</a>
+          </div>
+        </div>
+
+        <figure class="diagram" aria-labelledby="diagram-caption">
+          <div class="diagram-grid" id="diagram">
+            <svg class="edges" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <line data-from="web" data-to="api" x1="27.33" y1="9.76" x2="36.33" y2="32"/>
+              <line data-from="mobile" data-to="api" x1="27.33" y1="63.41" x2="36.33" y2="41"/>
+              <line data-from="api" data-to="s3" x1="63.67" y1="31" x2="72.67" y2="9.76"/>
+              <line data-from="api" data-to="db" x1="63.67" y1="35" x2="72.67" y2="35"/>
+              <line data-from="worker" data-to="db" x1="63.67" y1="87" x2="72.67" y2="42"/>
+              <line data-from="worker" data-to="push" x1="63.67" y1="90.24" x2="72.67" y2="90.24"/>
+            </svg>
+            <span class="dot" data-from="web" data-to="api" style="left:36.33%;top:32%"></span>
+            <span class="dot" data-from="mobile" data-to="api" style="left:36.33%;top:41%"></span>
+            <span class="dot" data-from="api" data-to="s3" style="left:72.67%;top:9.76%"></span>
+            <span class="dot" data-from="api" data-to="db" style="left:72.67%;top:35%"></span>
+            <span class="dot" data-from="worker" data-to="db" style="left:72.67%;top:42%"></span>
+            <span class="dot" data-from="worker" data-to="push" style="left:72.67%;top:90.24%"></span>
+
+            <button type="button" class="node" data-node="web" style="grid-area:1/1;--i:0" aria-pressed="false">
+              <span class="node-name" translate="no">Web</span>
+              <span class="node-tech" translate="no">React + Vite</span>
+            </button>
+            <button type="button" class="node" data-node="mobile" style="grid-area:3/1;--i:1" aria-pressed="false">
+              <span class="node-name" data-i18n="nodeMobile">App móvil</span>
+              <span class="node-tech" translate="no">Expo</span>
+            </button>
+            <button type="button" class="node" data-node="api" style="grid-area:2/2;--i:2" aria-pressed="true">
+              <span class="node-name" translate="no">API</span>
+              <span class="node-tech" translate="no">FastAPI</span>
+            </button>
+            <button type="button" class="node" data-node="worker" style="grid-area:4/2;--i:3" aria-pressed="false">
+              <span class="node-name" translate="no">Worker</span>
+              <span class="node-tech" translate="no">Outbox</span>
+            </button>
+            <button type="button" class="node node-store" data-node="s3" style="grid-area:1/3;--i:4" aria-pressed="false">
+              <span class="node-name" translate="no">S3</span>
+              <span class="node-tech" data-i18n="nodeS3Tech">Archivos</span>
+            </button>
+            <button type="button" class="node node-store" data-node="db" style="grid-area:2/3;--i:5" aria-pressed="false">
+              <span class="node-name" translate="no">MySQL 8</span>
+              <span class="node-tech" data-i18n="nodeDbTech">Datos</span>
+            </button>
+            <button type="button" class="node node-store" data-node="push" style="grid-area:4/3;--i:6" aria-pressed="false">
+              <span class="node-name" translate="no">Expo Push</span>
+              <span class="node-tech" data-i18n="nodePushTech">Avisos</span>
+            </button>
+          </div>
+
+          <div class="node-detail" aria-live="polite">
+            <p class="node-detail-title" id="detail-title">API</p>
+            <p class="node-detail-text" id="detail-text">Python 3.12, FastAPI, SQLAlchemy 2.0, Alembic y Pydantic v2. Un monolito modular con arquitectura hexagonal por bounded context.</p>
+          </div>
+          <figcaption id="diagram-caption" data-i18n="diagramCaption">Arquitectura de VetCare, plataforma de gestión veterinaria.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section wrap" id="proyectos" aria-labelledby="h-proyectos">
+      <h2 id="h-proyectos" data-i18n="projectsTitle">Proyectos</h2>
+
+      <article class="feature">
+        <div class="feature-copy">
+          <h3 translate="no">VetCare</h3>
+          <p class="feature-lead" data-i18n="vetLead">Plataforma para una veterinaria: una web de administración para el personal y una app móvil para los dueños de las mascotas, conectadas a una API común.</p>
+          <p data-i18n="vetBody">La API es un monolito modular con arquitectura hexagonal por bounded context. La web y la app consumen tipos TypeScript generados desde el contrato OpenAPI, y el CI impide fusionar un cambio de la API sin actualizarlos.</p>
+          <p class="status"><span class="status-mark" aria-hidden="true"></span><span data-i18n="vetStatus">v0.1.0: autenticación, roles y permisos funcionando en API, web y app móvil. En desarrollo: clínica, clientes, mascotas y agenda de citas.</span></p>
+          <a class="btn btn-primary" href="https://github.com/RenzoVillafuerteTapia/vetcare" rel="noopener" data-i18n="vetLink">Ver VetCare en GitHub</a>
+        </div>
+
+        <div class="table-scroll">
+          <table class="stack-table">
+            <caption class="visually-hidden" data-i18n="vetTableCaption">Tecnologías de VetCare por parte del sistema</caption>
+            <thead>
+              <tr><th scope="col" data-i18n="thPart">Parte</th><th scope="col" data-i18n="thTech">Tecnologías</th></tr>
+            </thead>
+            <tbody translate="no">
+              <tr><th scope="row"><code>apps/api</code></th><td>Python 3.12, FastAPI, SQLAlchemy 2.0, Alembic, Pydantic v2, MySQL 8</td></tr>
+              <tr><th scope="row"><code>apps/web</code></th><td>React, TypeScript, Vite, TanStack Query, React Hook Form + Zod, Tailwind + shadcn/ui</td></tr>
+              <tr><th scope="row"><code>apps/mobile</code></th><td>React Native, Expo, Expo Router, Expo Notifications, SecureStore</td></tr>
+              <tr><th scope="row"><code>packages/shared</code></th><td>TypeScript, OpenAPI</td></tr>
+              <tr><th scope="row"><span translate="yes" data-i18n="thInfra">Infraestructura</span></th><td>Docker Compose, AWS EC2 + RDS + S3, GitHub Actions</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <ul class="project-list">
+        <li class="project-row">
+          <h3 translate="no">LandhaApp</h3>
+          <p data-i18n="landhaBody">Aplicación web organizada por contextos de dominio: API en FastAPI con SQLAlchemy, Alembic y autenticación JWT, y un frontend en Vue 3 con Pinia y Vue Router.</p>
+          <p class="project-stack" translate="no">Python, FastAPI, MySQL, Vue 3, Pinia, Vite</p>
+          <a class="text-link" href="https://github.com/RenzoVillafuerteTapia/LandhaApp" rel="noopener" data-i18n="landhaLink">Ver LandhaApp en GitHub</a>
+        </li>
+        <li class="project-row">
+          <h3 data-i18n="furnitureTitle">Admin de tienda de muebles</h3>
+          <p data-i18n="furnitureBody">Dashboard de administración para gestionar productos, pedidos y ventas de una tienda de accesorios para muebles.</p>
+          <p class="project-stack" data-i18n="furnitureStack">Productos, pedidos, ventas</p>
+          <a class="text-link" href="https://github.com/RenzoVillafuerteTapia/furniture-store-admin-app" rel="noopener" data-i18n="furnitureLink">Ver el dashboard en GitHub</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section wrap" id="stack" aria-labelledby="h-stack">
+      <h2 id="h-stack" data-i18n="stackTitle">Con qué trabajo</h2>
+      <p class="section-intro" data-i18n="stackIntro">Todo lo que aparece aquí está en uso en alguno de mis repositorios.</p>
+      <dl class="stack-groups" translate="no">
+        <div>
+          <dt>Backend</dt>
+          <dd>Python</dd><dd>FastAPI</dd><dd>SQLAlchemy</dd><dd>Alembic</dd><dd>Pydantic</dd><dd>MySQL</dd><dd>C#</dd>
+        </div>
+        <div>
+          <dt>Web</dt>
+          <dd>TypeScript</dd><dd>React</dd><dd>Vue 3</dd><dd>Vite</dd><dd>TanStack Query</dd><dd>Tailwind</dd>
+        </div>
+        <div>
+          <dt translate="yes" data-i18n="stackMobile">Móvil</dt>
+          <dd>React Native</dd><dd>Expo</dd><dd>Kotlin</dd>
+        </div>
+        <div>
+          <dt translate="yes" data-i18n="stackPractices">Arquitectura y entrega</dt>
+          <dd translate="yes" data-i18n="stackHex">Arquitectura hexagonal</dd><dd>DDD</dd><dd>OpenAPI</dd><dd>Docker</dd><dd>GitHub Actions</dd><dd>AWS</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="section contact" id="contacto" aria-labelledby="h-contacto">
+      <div class="wrap">
+        <h2 id="h-contacto" data-i18n="contactTitle">Contacto</h2>
+        <p class="contact-lead" data-i18n="contactLead">Busco prácticas y proyectos donde seguir aprendiendo. Escríbeme y conversamos.</p>
+        <a class="contact-mail" href="mailto:21albertogonzales@gmail.com" translate="no" spellcheck="false">21albertogonzales@gmail.com</a>
+        <ul class="contact-links">
+          <li>
+            <a href="https://www.linkedin.com/in/renzo-villafuerte-tapia/" rel="noopener me">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.2v.1M12 17v-3.6c0-1.6 1-2.7 2.4-2.7s2.1 1 2.1 2.7V17M12 10.5V17"/></svg>
+              <span translate="no">LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/RenzoVillafuerteTapia" rel="noopener me">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.4c0-1 .1-1.5-.5-2.1 2.6-.3 5.2-1.3 5.200-5.700a4.400 4.400 0 0 0-1.200-3.100 4.100 4.100 0 0 0-.1-3.100s-1-.3-3.300 1.200a11.300 11.300 0 0 0-6 0C6.800 2.300 5.800 2.600 5.800 2.600a4.100 4.100 0 0 0-.1 3.100A4.400 4.400 0 0 0 4.500 8.800c0 4.400 2.600 5.400 5.200 5.700-.6.6-.6 1.200-.5 2.100V21"/></svg>
+              <span translate="no">GitHub</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <p><span translate="no">Renzo Villafuerte Tapia</span>, 2026</p>
+      <p><a href="https://github.com/RenzoVillafuerteTapia/Portafolio_RenzoVT" rel="noopener" data-i18n="footerSource">Código de esta página</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -5,41 +5,50 @@
   var en = {
     skip: 'Skip to content',
     navLabel: 'Main',
+    navAbout: 'About',
     navProjects: 'Projects',
     navStack: 'Stack',
     navContact: 'Contact',
     heroLead: 'Software Engineering student. I design and build complete systems: the API, the web app and the mobile app.',
-    heroNote: 'The diagram is the real architecture of VetCare, the project I am working on now. Tap each piece to see how it is built.',
     ctaProjects: 'View projects',
     ctaContact: 'Email me',
     nodeMobile: 'Mobile app',
     nodeS3Tech: 'Files',
     nodeDbTech: 'Data',
     nodePushTech: 'Alerts',
-    diagramCaption: 'Architecture of VetCare, a veterinary clinic management platform.',
+    diagramCaption: 'The real architecture of VetCare. Tap each piece to see how it is built.',
+    aboutTitle: 'About me',
+    aboutBody: 'I am a Software Engineering student and I learn by building complete projects, from the domain model to deployment: APIs in FastAPI, web apps in React and Vue, and mobile apps with Expo and Kotlin.',
+    aboutLink: 'View my LinkedIn',
+    buildTitle: 'What I build',
+    buildApi: 'FastAPI with hexagonal architecture and DDD.',
+    buildWeb: 'Admin panels in React and Vue.',
+    buildMobileTitle: 'Mobile',
+    buildMobile: 'Client apps with Expo and Kotlin.',
     projectsTitle: 'Projects',
+    vetThumb: 'Illustration: the schedule in the VetCare admin web app and the mobile app',
     vetLead: 'A platform for a veterinary clinic: an admin web app for the staff and a mobile app for pet owners, both connected to one shared API.',
-    vetBody: 'The API is a modular monolith with hexagonal architecture per bounded context. The web and mobile apps consume TypeScript types generated from the OpenAPI contract, and CI blocks merging an API change without updating them.',
-    vetStatus: 'v0.1.0: authentication, roles and permissions working across API, web and mobile. In progress: clinic setup, clients, pets and appointment scheduling.',
+    vetBody: 'The API is a modular monolith with hexagonal architecture. The web and mobile apps use TypeScript types generated from the OpenAPI contract, and CI blocks merging an API change without updating them.',
+    vetStatus: 'v0.1.0: authentication, roles and permissions working across API, web and mobile.',
     vetLink: 'View VetCare on GitHub',
-    vetTableCaption: 'VetCare technologies by part of the system',
-    thPart: 'Part',
-    thTech: 'Technologies',
-    thInfra: 'Infrastructure',
+    landhaThumb: 'Illustration: the LandhaApp web panel',
     landhaBody: 'A web application organized by domain contexts: a FastAPI API with SQLAlchemy, Alembic and JWT authentication, and a Vue 3 frontend with Pinia and Vue Router.',
     landhaLink: 'View LandhaApp on GitHub',
+    furnitureThumb: 'Illustration: the furniture store sales dashboard',
     furnitureTitle: 'Furniture store admin',
     furnitureBody: 'An admin dashboard to manage products, orders and sales for a furniture accessories store.',
-    furnitureStack: 'Products, orders, sales',
+    chipProducts: 'Products',
+    chipOrders: 'Orders',
+    chipSales: 'Sales',
     furnitureLink: 'View the dashboard on GitHub',
     stackTitle: 'What I work with',
     stackIntro: 'Everything listed here is in use in one of my repositories.',
     stackMobile: 'Mobile',
     stackPractices: 'Architecture & delivery',
     stackHex: 'Hexagonal architecture',
-    contactTitle: 'Contact',
-    contactLead: 'I am looking for internships and projects where I can keep learning. Write to me and let’s talk.',
-    footerSource: 'Source code of this page'
+    contactTitle: 'Let’s talk',
+    contactLead: 'I am looking for internships and projects where I can keep learning. Reach me through any of these.',
+    contactCta: 'Send an email'
   };
 
   var meta = {
@@ -86,11 +95,16 @@
     }
   };
 
+  function all(selector) {
+    return Array.prototype.slice.call(document.querySelectorAll(selector));
+  }
+
+  /* Language */
   var lang = 'es';
   var selected = 'api';
   var es = {};
-  var textEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
-  var attrEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n-attr]'));
+  var textEls = all('[data-i18n]');
+  var attrEls = all('[data-i18n-attr]');
   var switchEl = document.getElementById('lang-switch');
   var descEl = document.querySelector('meta[name="description"]');
 
@@ -155,17 +169,16 @@
     applyLang(next);
   });
 
-  // Architecture diagram
-  var nodeEls = Array.prototype.slice.call(document.querySelectorAll('.node'));
-  var edgeEls = Array.prototype.slice.call(document.querySelectorAll('.edges line'));
-  var dotEls = Array.prototype.slice.call(document.querySelectorAll('.dot'));
+  /* Architecture diagram */
+  var nodeEls = all('.node');
+  var linkEls = all('.edges line').concat(all('.dot'));
 
   function selectNode(id) {
     selected = id;
     nodeEls.forEach(function (el) {
       el.setAttribute('aria-pressed', String(el.dataset.node === id));
     });
-    edgeEls.concat(dotEls).forEach(function (el) {
+    linkEls.forEach(function (el) {
       el.classList.toggle('is-active', el.dataset.from === id || el.dataset.to === id);
     });
     renderDetail();
@@ -177,4 +190,63 @@
 
   applyLang(initialLang());
   selectNode(selected);
+
+  /* Scroll motion */
+  var reduceMotion = !document.documentElement.classList.contains('motion');
+  var revealEls = all('.reveal');
+
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    revealEls.forEach(function (el) { el.classList.add('is-in'); });
+  } else {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-in');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    revealEls.forEach(function (el) { observer.observe(el); });
+  }
+
+  if (reduceMotion) return;
+
+  // Each [data-speed] element drifts relative to its (static) parent as the page scrolls.
+  var movers = all('[data-speed]').map(function (el) {
+    return {
+      el: el,
+      anchor: el.parentElement,
+      speed: parseFloat(el.dataset.speed),
+      rotate: parseFloat(el.dataset.rotate || '0')
+    };
+  });
+  var progress = document.getElementById('progress');
+  var ticking = false;
+
+  function update() {
+    ticking = false;
+    var viewport = window.innerHeight;
+    var scrolled = window.scrollY;
+    var max = document.documentElement.scrollHeight - viewport;
+    var rects = movers.map(function (m) { return m.anchor.getBoundingClientRect(); });
+
+    movers.forEach(function (m, i) {
+      var rect = rects[i];
+      if (rect.bottom < -300 || rect.top > viewport + 300) return;
+      var offset = rect.top + rect.height / 2 - viewport / 2;
+      var transform = 'translate3d(0,' + (offset * m.speed).toFixed(1) + 'px,0)';
+      if (m.rotate) transform += ' rotate(' + (scrolled * m.rotate).toFixed(2) + 'deg)';
+      m.el.style.transform = transform;
+    });
+    if (progress) progress.style.transform = 'scaleX(' + (max > 0 ? Math.min(scrolled / max, 1) : 0) + ')';
+  }
+
+  function requestUpdate() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(update);
+  }
+
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+  update();
 })();

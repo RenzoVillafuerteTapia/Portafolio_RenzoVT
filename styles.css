@@ -580,3 +580,8 @@ html:not(.motion) .marquee-controls { display: none; }
 /* Both marquee rows start off-canvas so sliding with the scroll never opens a gap. */
 .marquee-row { margin-left: -18rem; }
 .marquee-row-b { margin-left: -27rem; }
+
+/* Motion runs at one constant speed; nothing is tied to the scroll position. */
+.motion .ticker p { animation: marquee 50s linear infinite; }
+.marquee-row, .ticker p, .about-photo img, .pcard-media img, .pcard-media-icon svg { will-change: auto; }
+.about-photo img, .pcard-media img { scale: 1; }

@@ -9,51 +9,59 @@
     navProjects: 'Projects',
     navStack: 'Stack',
     navContact: 'Contact',
-    heroLead: 'Software Engineering student. I design and build complete systems: the API, the web app and the mobile app.',
+    heroTitle: 'Hi, I’m Renzo. I build complete systems, from the API to the mobile app.',
+    heroLead: 'Software Engineering student. APIs in FastAPI, web apps in React and Vue, and mobile apps with Expo and Kotlin.',
     ctaProjects: 'View projects',
-    ctaContact: 'Email me',
+    heroNote: 'Or write to me at',
+    marqueePause: 'Pause the motion',
+    marqueePlay: 'Resume the motion',
+    statsTitle: 'Projects thought through end to end, from the domain model to deployment',
+    stat1: 'Routes in the VetCare API',
+    stat2: 'Documented architecture decisions',
+    stat3: 'Languages across my repositories',
+    buildApi: 'FastAPI with hexagonal architecture and DDD, Alembic migrations and an OpenAPI contract.',
+    buildWeb: 'Admin panels in React and Vue, with types generated from the API.',
+    buildMobileTitle: 'Mobile',
+    buildMobile: 'Client apps with Expo and React Native, and native projects in Kotlin.',
+    photoAlt: 'Photo of Renzo Villafuerte Tapia',
+    aboutTitle: 'About me',
+    aboutBody: 'I’m Renzo Villafuerte Tapia, a Software Engineering student. I learn by building complete projects, from the domain model to deployment: APIs in FastAPI, web apps in React and Vue, and mobile apps with Expo and Kotlin.',
+    aboutLink: 'View my LinkedIn',
+    projectsTitle: 'Projects that show how I work',
+    vetCard: 'A platform for a veterinary clinic: admin web app, mobile app and one shared API.',
+    vetThumb: 'Screenshot of the VetCare home panel',
+    vetLink: 'View VetCare on GitHub',
+    landhaCard: 'A web app organized by domain contexts: FastAPI with JWT and a Vue 3 frontend with Pinia.',
+    landhaThumb: 'Illustration of the LandhaApp web panel',
+    landhaLink: 'View LandhaApp on GitHub',
+    furnitureTitle: 'Furniture store admin',
+    furnitureCard: 'A dashboard to manage products, orders and sales for an accessories store.',
+    furnitureThumb: 'Illustration of the sales dashboard',
+    furnitureLink: 'View the dashboard on GitHub',
+    loginCard: 'Staff access: sign-in, account activation and invitations by role.',
+    shotLoginAlt: 'Screenshot of the VetCare sign-in page',
+    loginLink: 'See how VetCare is built',
+    githubCard: 'The rest of my public repositories, with their code and history.',
+    githubLink: 'View my GitHub profile',
+    railPrev: 'Previous project',
+    railNext: 'Next project',
+    insideTitle: 'Inside VetCare',
+    vetBody: 'The API is a modular monolith with hexagonal architecture. The web and mobile apps use TypeScript types generated from the OpenAPI contract, and CI blocks merging an API change without updating them.',
+    vetStatus: 'v0.1.0: authentication, roles and permissions working across API, web and mobile.',
     nodeMobile: 'Mobile app',
     nodeS3Tech: 'Files',
     nodeDbTech: 'Data',
     nodePushTech: 'Alerts',
     diagramCaption: 'The real architecture of VetCare. Tap each piece to see how it is built.',
-    aboutTitle: 'About me',
-    aboutBody: 'I am a Software Engineering student and I learn by building complete projects, from the domain model to deployment: APIs in FastAPI, web apps in React and Vue, and mobile apps with Expo and Kotlin.',
-    aboutLink: 'View my LinkedIn',
-    buildTitle: 'What I build',
-    buildApi: 'FastAPI with hexagonal architecture and DDD.',
-    buildWeb: 'Admin panels in React and Vue.',
-    buildMobileTitle: 'Mobile',
-    buildMobile: 'Client apps with Expo and Kotlin.',
-    projectsTitle: 'Projects',
-    photoAlt: 'Photo of Renzo Villafuerte Tapia',
-    vetThumb: 'Screenshot of the home panel in the VetCare admin web app',
-    shotLoginAlt: 'Screenshot of the VetCare sign-in page',
-    shotLogin: 'VetCare: sign-in',
-    shotInviteAlt: 'Screenshot of the form to invite users by role in VetCare',
-    shotInvite: 'VetCare: invite the team by role',
-    vetLead: 'A platform for a veterinary clinic: an admin web app for the staff and a mobile app for pet owners, both connected to one shared API.',
-    vetBody: 'The API is a modular monolith with hexagonal architecture. The web and mobile apps use TypeScript types generated from the OpenAPI contract, and CI blocks merging an API change without updating them.',
-    vetStatus: 'v0.1.0: authentication, roles and permissions working across API, web and mobile.',
-    vetLink: 'View VetCare on GitHub',
-    landhaThumb: 'Illustration: the LandhaApp web panel',
-    landhaBody: 'A web application organized by domain contexts: a FastAPI API with SQLAlchemy, Alembic and JWT authentication, and a Vue 3 frontend with Pinia and Vue Router.',
-    landhaLink: 'View LandhaApp on GitHub',
-    furnitureThumb: 'Illustration: the furniture store sales dashboard',
-    furnitureTitle: 'Furniture store admin',
-    furnitureBody: 'An admin dashboard to manage products, orders and sales for a furniture accessories store.',
-    chipProducts: 'Products',
-    chipOrders: 'Orders',
-    chipSales: 'Sales',
-    furnitureLink: 'View the dashboard on GitHub',
     stackTitle: 'What I work with',
-    stackIntro: 'Everything listed here is in use in one of my repositories.',
     stackMobile: 'Mobile',
     stackPractices: 'Architecture & delivery',
     stackHex: 'Hexagonal architecture',
-    contactTitle: 'Let’s talk',
-    contactLead: 'I am looking for internships and projects where I can keep learning. Reach me through any of these.',
-    contactCta: 'Send an email'
+    contactTitle: 'Write to me and let’s talk',
+    contactCta: 'Send an email',
+    contactLead: 'I’m looking for internships and projects where I can keep learning.',
+    footerTagline: 'From the API to the mobile app',
+    footerSections: 'Sections'
   };
 
   var meta = {
@@ -100,24 +108,28 @@
     }
   };
 
-  function all(selector) {
-    return Array.prototype.slice.call(document.querySelectorAll(selector));
+  function all(selector, root) {
+    return Array.prototype.slice.call((root || document).querySelectorAll(selector));
   }
 
   /* Language */
   var lang = 'es';
   var selected = 'api';
-  var es = {};
+  var es = { marqueePlay: 'Reanudar el movimiento' };
   var textEls = all('[data-i18n]');
   var attrEls = all('[data-i18n-attr]');
   var switchEl = document.getElementById('lang-switch');
   var descEl = document.querySelector('meta[name="description"]');
+  var marquee = document.getElementById('marquee');
+  var marqueeToggle = document.getElementById('marquee-toggle');
 
   textEls.forEach(function (el) { es[el.dataset.i18n] = el.textContent; });
   attrEls.forEach(function (el) {
     var pair = el.dataset.i18nAttr.split(':');
     es[pair[1]] = el.getAttribute(pair[0]);
   });
+
+  function dict() { return lang === 'en' ? en : es; }
 
   function stored() {
     try { return localStorage.getItem('lang'); } catch (e) { return null; }
@@ -142,17 +154,23 @@
     document.getElementById('detail-text').textContent = copy[1];
   }
 
+  function renderMarqueeToggle() {
+    var paused = marquee.classList.contains('is-paused');
+    marqueeToggle.textContent = dict()[paused ? 'marqueePlay' : 'marqueePause'];
+    marqueeToggle.setAttribute('aria-pressed', String(paused));
+  }
+
   function applyLang(next) {
     lang = next;
-    var dict = lang === 'en' ? en : es;
+    var d = dict();
     document.documentElement.lang = lang;
     textEls.forEach(function (el) {
-      var value = dict[el.dataset.i18n];
+      var value = d[el.dataset.i18n];
       if (value != null) el.textContent = value;
     });
     attrEls.forEach(function (el) {
       var pair = el.dataset.i18nAttr.split(':');
-      if (dict[pair[1]] != null) el.setAttribute(pair[0], dict[pair[1]]);
+      if (d[pair[1]] != null) el.setAttribute(pair[0], d[pair[1]]);
     });
     document.title = meta[lang].title;
     if (descEl) descEl.setAttribute('content', meta[lang].description);
@@ -161,6 +179,7 @@
     switchEl.hreflang = meta[lang].switchLang;
     switchEl.setAttribute('href', '?lang=' + meta[lang].switchLang);
     renderDetail();
+    renderMarqueeToggle();
   }
 
   switchEl.addEventListener('click', function (event) {
@@ -193,14 +212,60 @@
     el.addEventListener('click', function () { selectNode(el.dataset.node); });
   });
 
+  /* Marquee: duplicate each row once so the loop is seamless, and allow pausing. */
+  var motion = document.documentElement.classList.contains('motion');
+  if (motion) {
+    all('.marquee-track').forEach(function (track) {
+      all('li', track).forEach(function (item) { track.appendChild(item.cloneNode(true)); });
+    });
+  }
+  marqueeToggle.addEventListener('click', function () {
+    marquee.classList.toggle('is-paused');
+    renderMarqueeToggle();
+  });
+
   applyLang(initialLang());
   selectNode(selected);
 
+  /* Projects rail */
+  var rail = document.getElementById('rail');
+  var cards = all('.pcard', rail);
+  var dotsBox = document.getElementById('rail-dots');
+  var prev = document.getElementById('rail-prev');
+  var next = document.getElementById('rail-next');
+  var dots = cards.map(function () {
+    var dot = document.createElement('span');
+    dotsBox.appendChild(dot);
+    return dot;
+  });
+
+  function railStep() {
+    return cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : rail.clientWidth;
+  }
+
+  function syncRail() {
+    var max = rail.scrollWidth - rail.clientWidth;
+    var index = Math.round(rail.scrollLeft / railStep());
+    if (rail.scrollLeft >= max - 2) index = cards.length - 1;
+    dots.forEach(function (dot, i) { dot.classList.toggle('is-current', i === index); });
+    prev.disabled = rail.scrollLeft <= 2;
+    next.disabled = rail.scrollLeft >= max - 2;
+  }
+
+  function moveRail(direction) {
+    rail.scrollBy({ left: direction * railStep(), behavior: motion ? 'smooth' : 'auto' });
+  }
+
+  prev.addEventListener('click', function () { moveRail(-1); });
+  next.addEventListener('click', function () { moveRail(1); });
+  rail.addEventListener('scroll', function () { window.requestAnimationFrame(syncRail); }, { passive: true });
+  window.addEventListener('resize', syncRail);
+  syncRail();
+
   /* Scroll motion */
-  var reduceMotion = !document.documentElement.classList.contains('motion');
   var revealEls = all('.reveal');
 
-  if (reduceMotion || !('IntersectionObserver' in window)) {
+  if (!motion || !('IntersectionObserver' in window)) {
     revealEls.forEach(function (el) { el.classList.add('is-in'); });
   } else {
     var observer = new IntersectionObserver(function (entries) {
@@ -213,16 +278,14 @@
     revealEls.forEach(function (el) { observer.observe(el); });
   }
 
-  if (reduceMotion) return;
+  if (!motion) return;
 
-  // Each [data-speed] element drifts relative to its (static) parent as the page scrolls.
+  // [data-speed] drifts vertically against its static parent; [data-shift] slides sideways with the page.
   var movers = all('[data-speed]').map(function (el) {
-    return {
-      el: el,
-      anchor: el.parentElement,
-      speed: parseFloat(el.dataset.speed),
-      rotate: parseFloat(el.dataset.rotate || '0')
-    };
+    return { el: el, anchor: el.parentElement, speed: parseFloat(el.dataset.speed) };
+  });
+  var shifters = all('[data-shift]').map(function (el) {
+    return { el: el, shift: parseFloat(el.dataset.shift) };
   });
   var progress = document.getElementById('progress');
   var ticking = false;
@@ -238,10 +301,13 @@
       var rect = rects[i];
       if (rect.bottom < -300 || rect.top > viewport + 300) return;
       var offset = rect.top + rect.height / 2 - viewport / 2;
-      var transform = 'translate3d(0,' + (offset * m.speed).toFixed(1) + 'px,0)';
-      if (m.rotate) transform += ' rotate(' + (scrolled * m.rotate).toFixed(2) + 'deg)';
-      m.el.style.transform = transform;
+      m.el.style.transform = 'translate3d(0,' + (offset * m.speed).toFixed(1) + 'px,0)';
     });
+    if (scrolled < viewport * 2) {
+      shifters.forEach(function (s) {
+        s.el.style.transform = 'translate3d(' + (scrolled * s.shift).toFixed(1) + 'px,0,0)';
+      });
+    }
     if (progress) progress.style.transform = 'scaleX(' + (max > 0 ? Math.min(scrolled / max, 1) : 0) + ')';
   }
 

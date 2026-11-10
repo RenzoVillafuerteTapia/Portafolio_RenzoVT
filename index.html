@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Renzo Villafuerte Tapia | Portafolio</title>
   <meta name="description" content="Portafolio de Renzo Villafuerte Tapia, estudiante de Ingeniería de Software. APIs, aplicaciones web y móviles con arquitectura hexagonal y DDD.">
-  <meta name="theme-color" content="#E4F0EE">
+  <meta name="theme-color" content="#123743">
   <meta property="og:title" content="Renzo Villafuerte Tapia | Portafolio">
   <meta property="og:description" content="Estudiante de Ingeniería de Software. APIs, aplicaciones web y móviles.">
   <meta property="og:type" content="website">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>(function () { var m = /[?&]motion=on/.test(location.search) || !matchMedia('(prefers-reduced-motion: reduce)').matches; document.documentElement.className = m ? 'js motion' : 'js'; })();</script>
 </head>
@@ -21,13 +21,10 @@
   <a class="skip-link" href="#contenido" data-i18n="skip">Saltar al contenido</a>
 
   <svg class="sprite" aria-hidden="true" focusable="false">
-    <symbol id="i-api" viewBox="0 0 96 96"><rect x="16" y="18" width="64" height="24" rx="7"/><rect x="16" y="54" width="64" height="24" rx="7"/><path d="M28 30h.1M40 30h.1M28 66h.1M40 66h.1M58 30h12M58 66h12"/></symbol>
-    <symbol id="i-web" viewBox="0 0 96 96"><rect x="10" y="16" width="76" height="64" rx="9"/><path d="M10 34h76M22 25h.1M32 25h.1M24 48h24M24 60h16M60 46h14v20H60z"/></symbol>
-    <symbol id="i-mobile" viewBox="0 0 96 96"><rect x="28" y="8" width="40" height="80" rx="10"/><path d="M42 78h12M38 26h20M38 38h20M38 50h12"/></symbol>
-    <symbol id="i-code" viewBox="0 0 96 96"><path d="M32 30 14 48l18 18M64 30l18 18-18 18M55 22 41 74"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M14 6l-6 6 6 6"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="M10 6l6 6-6 6"/></symbol>
     <symbol id="i-hex" viewBox="0 0 96 96"><path d="M48 8 82.600 28v40L48 88 13.400 68V28z"/><path d="M48 30 63.600 39v18L48 66 32.400 57V39z"/></symbol>
-    <symbol id="i-db" viewBox="0 0 96 96"><ellipse cx="48" cy="24" rx="28" ry="11"/><path d="M20 24v48c0 6 12.500 11 28 11s28-5 28-11V24M20 48c0 6 12.500 11 28 11s28-5 28-11"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 96 96"><rect x="10" y="22" width="76" height="52" rx="9"/><path d="m12 28 36 26 36-26"/></symbol>
   </svg>
 
   <header class="site-header">
@@ -37,271 +34,273 @@
         <ul class="nav-list">
           <li><a href="#sobre" data-i18n="navAbout">Sobre mí</a></li>
           <li><a href="#proyectos" data-i18n="navProjects">Proyectos</a></li>
+          <li><a href="#vetcare" translate="no">VetCare</a></li>
           <li><a href="#stack" data-i18n="navStack">Stack</a></li>
-          <li><a href="#contacto" data-i18n="navContact">Contacto</a></li>
-          <li><a class="lang-switch" id="lang-switch" href="?lang=en" hreflang="en" lang="en">English</a></li>
         </ul>
       </nav>
+      <div class="header-actions">
+        <a class="lang-switch" id="lang-switch" href="?lang=en" hreflang="en" lang="en">English</a>
+        <a class="btn btn-light btn-small" href="#contacto" data-i18n="navContact">Contacto</a>
+      </div>
     </div>
   </header>
 
   <main id="contenido">
     <section class="hero" id="inicio">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <h1 class="hero-name" translate="no">Renzo Villafuerte Tapia</h1>
-          <p class="hero-lead" data-i18n="heroLead">Estudiante de Ingeniería de Software. Diseño y construyo sistemas completos: la API, la web y la app móvil.</p>
-          <div class="hero-actions">
-            <a class="btn btn-solid" href="#proyectos" data-i18n="ctaProjects">Ver proyectos</a>
-            <a class="btn btn-outline" href="#contacto" data-i18n="ctaContact">Escribirme</a>
+      <div class="wrap hero-copy">
+        <h1 data-i18n="heroTitle">Hola, soy Renzo. Construyo sistemas completos, de la API a la app móvil.</h1>
+        <p class="hero-lead" data-i18n="heroLead">Estudiante de Ingeniería de Software. APIs en FastAPI, web en React y Vue, y apps con Expo y Kotlin.</p>
+        <a class="btn btn-light" href="#proyectos" data-i18n="ctaProjects">Ver proyectos</a>
+        <p class="hero-note"><span data-i18n="heroNote">O escríbeme a</span> <a href="mailto:renzovillata@gmail.com" translate="no">renzovillata@gmail.com</a></p>
+      </div>
+
+      <div class="marquee" id="marquee">
+        <div class="marquee-rows" aria-hidden="true">
+          <div class="marquee-row" data-shift="-0.18">
+            <ul class="marquee-track">
+              <li><img src="assets/vetcare-inicio.webp" width="2160" height="1350" alt=""></li>
+              <li><img src="assets/landha.svg" width="320" height="200" alt=""></li>
+              <li><img src="assets/vetcare-login.webp" width="2160" height="1350" alt=""></li>
+              <li><img src="assets/muebles.svg" width="320" height="200" alt=""></li>
+              <li><img src="assets/vetcare-invitar.webp" width="2160" height="1350" alt=""></li>
+            </ul>
+          </div>
+          <div class="marquee-row marquee-row-b" data-shift="0.18">
+            <ul class="marquee-track marquee-track-reverse">
+              <li><img src="assets/vetcare-login.webp" width="2160" height="1350" alt=""></li>
+              <li><img src="assets/muebles.svg" width="320" height="200" alt=""></li>
+              <li><img src="assets/vetcare-inicio.webp" width="2160" height="1350" alt=""></li>
+              <li><img src="assets/vetcare-invitar.webp" width="2160" height="1350" alt=""></li>
+              <li><img src="assets/landha.svg" width="320" height="200" alt=""></li>
+            </ul>
           </div>
         </div>
-
-        <div class="hero-visual">
-          <span class="blob blob-hero" data-speed="-0.14" data-rotate="0.04" aria-hidden="true"></span>
-          <span class="bubble bubble-a" data-speed="0.3" aria-hidden="true"></span>
-          <span class="bubble bubble-b" data-speed="-0.35" aria-hidden="true"></span>
-          <span class="bubble bubble-c" data-speed="0.18" aria-hidden="true"></span>
-
-          <figure class="diagram" aria-labelledby="diagram-caption">
-            <div class="diagram-grid" id="diagram">
-              <svg class="edges" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-                <line data-from="web" data-to="api" x1="27.33" y1="9.76" x2="36.33" y2="32"/>
-                <line data-from="mobile" data-to="api" x1="27.33" y1="63.41" x2="36.33" y2="41"/>
-                <line data-from="api" data-to="s3" x1="63.67" y1="31" x2="72.67" y2="9.76"/>
-                <line data-from="api" data-to="db" x1="63.67" y1="35" x2="72.67" y2="35"/>
-                <line data-from="worker" data-to="db" x1="63.67" y1="87" x2="72.67" y2="42"/>
-                <line data-from="worker" data-to="push" x1="63.67" y1="90.24" x2="72.67" y2="90.24"/>
-              </svg>
-              <span class="dot" data-from="web" data-to="api" style="left:36.33%;top:32%"></span>
-              <span class="dot" data-from="mobile" data-to="api" style="left:36.33%;top:41%"></span>
-              <span class="dot" data-from="api" data-to="s3" style="left:72.67%;top:9.76%"></span>
-              <span class="dot" data-from="api" data-to="db" style="left:72.67%;top:35%"></span>
-              <span class="dot" data-from="worker" data-to="db" style="left:72.67%;top:42%"></span>
-              <span class="dot" data-from="worker" data-to="push" style="left:72.67%;top:90.24%"></span>
-
-              <button type="button" class="node node-client" data-node="web" style="grid-area:1/1;--i:0" aria-pressed="false">
-                <span class="node-name" translate="no">Web</span>
-                <span class="node-tech" translate="no">React + Vite</span>
-              </button>
-              <button type="button" class="node node-client" data-node="mobile" style="grid-area:3/1;--i:1" aria-pressed="false">
-                <span class="node-name" data-i18n="nodeMobile">App móvil</span>
-                <span class="node-tech" translate="no">Expo</span>
-              </button>
-              <button type="button" class="node node-core" data-node="api" style="grid-area:2/2;--i:2" aria-pressed="true">
-                <span class="node-name" translate="no">API</span>
-                <span class="node-tech" translate="no">FastAPI</span>
-              </button>
-              <button type="button" class="node node-core" data-node="worker" style="grid-area:4/2;--i:3" aria-pressed="false">
-                <span class="node-name" translate="no">Worker</span>
-                <span class="node-tech" translate="no">Outbox</span>
-              </button>
-              <button type="button" class="node node-store" data-node="s3" style="grid-area:1/3;--i:4" aria-pressed="false">
-                <span class="node-name" translate="no">S3</span>
-                <span class="node-tech" data-i18n="nodeS3Tech">Archivos</span>
-              </button>
-              <button type="button" class="node node-store" data-node="db" style="grid-area:2/3;--i:5" aria-pressed="false">
-                <span class="node-name" translate="no">MySQL 8</span>
-                <span class="node-tech" data-i18n="nodeDbTech">Datos</span>
-              </button>
-              <button type="button" class="node node-store" data-node="push" style="grid-area:4/3;--i:6" aria-pressed="false">
-                <span class="node-name" translate="no">Expo Push</span>
-                <span class="node-tech" data-i18n="nodePushTech">Avisos</span>
-              </button>
-            </div>
-
-            <div class="node-detail" aria-live="polite">
-              <p class="node-detail-title" id="detail-title">API</p>
-              <p class="node-detail-text" id="detail-text">Python 3.12, FastAPI, SQLAlchemy 2.0, Alembic y Pydantic v2. Un monolito modular con arquitectura hexagonal por bounded context.</p>
-            </div>
-            <figcaption id="diagram-caption" data-i18n="diagramCaption">Arquitectura real de VetCare. Toca cada pieza para ver cómo está hecha.</figcaption>
-          </figure>
+        <div class="wrap marquee-controls">
+          <button type="button" class="link-button" id="marquee-toggle" aria-pressed="false" data-i18n="marqueePause">Pausar el movimiento</button>
         </div>
       </div>
     </section>
 
-    <section class="section wrap" id="sobre" aria-labelledby="h-sobre">
-      <div class="about-card">
-        <div class="collage">
-          <div class="tile tile-a reveal" data-reveal="zoom" style="--d:0"><svg aria-hidden="true" data-speed="0.10"><use href="#i-code"/></svg></div>
-          <div class="tile tile-b reveal" data-reveal="zoom" style="--d:1"><svg aria-hidden="true" data-speed="-0.08"><use href="#i-hex"/></svg></div>
-          <div class="tile tile-c reveal" data-reveal="zoom" style="--d:2"><svg aria-hidden="true" data-speed="-0.10"><use href="#i-mobile"/></svg></div>
-          <div class="tile tile-d reveal" data-reveal="zoom" style="--d:3"><img data-speed="0.05" src="assets/renzo.png" width="187" height="184" alt="Foto de Renzo Villafuerte Tapia" data-i18n-attr="alt:photoAlt"></div>
+    <section class="section stats" aria-labelledby="h-stats">
+      <div class="wrap">
+        <h2 class="statement reveal" id="h-stats" data-i18n="statsTitle">Proyectos pensados de punta a punta, del modelo de dominio al despliegue</h2>
+        <dl class="stat-row">
+          <div class="reveal" style="--d:0"><dd translate="no">42</dd><dt data-i18n="stat1">Rutas en la API de VetCare</dt></div>
+          <div class="reveal" style="--d:1"><dd translate="no">4</dd><dt data-i18n="stat2">Decisiones de arquitectura documentadas</dt></div>
+          <div class="reveal" style="--d:2"><dd translate="no">4</dd><dt data-i18n="stat3">Lenguajes en mis repositorios</dt></div>
+        </dl>
+        <ul class="feature-row">
+          <li class="feature reveal" style="--d:0">
+            <h3 translate="no">APIs</h3>
+            <p data-i18n="buildApi">FastAPI con arquitectura hexagonal y DDD, migraciones con Alembic y contrato OpenAPI.</p>
+          </li>
+          <li class="feature reveal" style="--d:1">
+            <h3 translate="no">Web</h3>
+            <p data-i18n="buildWeb">Paneles de administración en React y Vue, con tipos generados desde la API.</p>
+          </li>
+          <li class="feature reveal" style="--d:2">
+            <h3 data-i18n="buildMobileTitle">Móvil</h3>
+            <p data-i18n="buildMobile">Apps para clientes con Expo y React Native, y proyectos nativos en Kotlin.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section about" id="sobre" aria-labelledby="h-sobre">
+      <div class="wrap about-grid">
+        <div class="about-photo reveal" data-reveal="zoom">
+          <img data-speed="0.05" src="assets/renzo.png" width="187" height="184" alt="Foto de Renzo Villafuerte Tapia" data-i18n-attr="alt:photoAlt">
         </div>
         <div class="about-copy reveal" data-reveal="right">
           <h2 id="h-sobre" data-i18n="aboutTitle">Sobre mí</h2>
-          <p data-i18n="aboutBody">Soy estudiante de Ingeniería de Software y aprendo construyendo proyectos completos, desde el modelo de dominio hasta el despliegue: APIs en FastAPI, web en React y Vue, y apps móviles con Expo y Kotlin.</p>
+          <p data-i18n="aboutBody">Soy Renzo Villafuerte Tapia, estudiante de Ingeniería de Software. Aprendo construyendo proyectos completos, desde el modelo de dominio hasta el despliegue: APIs en FastAPI, web en React y Vue, y apps móviles con Expo y Kotlin.</p>
           <a class="btn btn-outline" href="https://www.linkedin.com/in/renzo-villafuerte-tapia/" rel="noopener me" data-i18n="aboutLink">Ver mi LinkedIn</a>
         </div>
       </div>
     </section>
 
-    <section class="build" aria-labelledby="h-build">
+    <section class="section projects" id="proyectos" aria-labelledby="h-proyectos">
       <div class="wrap">
-        <h2 class="visually-hidden" id="h-build" data-i18n="buildTitle">Lo que construyo</h2>
-        <ul class="circles">
-          <li class="reveal" data-reveal="zoom" style="--d:0">
-            <span class="circle"><svg data-speed="0.12" aria-hidden="true"><use href="#i-api"/></svg></span>
-            <h3 translate="no">APIs</h3>
-            <p data-i18n="buildApi">FastAPI con arquitectura hexagonal y DDD.</p>
-          </li>
-          <li class="reveal" data-reveal="zoom" style="--d:1">
-            <span class="circle"><svg data-speed="0.12" aria-hidden="true"><use href="#i-web"/></svg></span>
-            <h3 translate="no">Web</h3>
-            <p data-i18n="buildWeb">Paneles de administración en React y Vue.</p>
-          </li>
-          <li class="reveal" data-reveal="zoom" style="--d:2">
-            <span class="circle"><svg data-speed="0.12" aria-hidden="true"><use href="#i-mobile"/></svg></span>
-            <h3 data-i18n="buildMobileTitle">Móvil</h3>
-            <p data-i18n="buildMobile">Apps para clientes con Expo y Kotlin.</p>
-          </li>
-        </ul>
+        <h2 class="reveal" id="h-proyectos" data-i18n="projectsTitle">Proyectos para ver cómo trabajo</h2>
+      </div>
+      <ul class="rail" id="rail" tabindex="0" aria-label="Proyectos" data-i18n-attr="aria-label:navProjects">
+        <li class="pcard tone-teal">
+          <h3 translate="no">VetCare</h3>
+          <p data-i18n="vetCard">Plataforma para una veterinaria: web de administración, app móvil y una API común.</p>
+          <div class="pcard-media"><img data-speed="0.04" src="assets/vetcare-inicio.webp" width="2160" height="1350" loading="lazy" alt="Captura del panel de inicio de VetCare" data-i18n-attr="alt:vetThumb"></div>
+          <a class="pcard-link" href="https://github.com/RenzoVillafuerteTapia/vetcare" rel="noopener" aria-label="Ver VetCare en GitHub" data-i18n-attr="aria-label:vetLink"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </li>
+        <li class="pcard tone-clay">
+          <h3 translate="no">LandhaApp</h3>
+          <p data-i18n="landhaCard">App web por contextos de dominio: FastAPI con JWT y un frontend en Vue 3 con Pinia.</p>
+          <div class="pcard-media"><img data-speed="0.04" src="assets/landha.svg" width="320" height="200" loading="lazy" alt="Ilustración del panel web de LandhaApp" data-i18n-attr="alt:landhaThumb"></div>
+          <a class="pcard-link" href="https://github.com/RenzoVillafuerteTapia/LandhaApp" rel="noopener" aria-label="Ver LandhaApp en GitHub" data-i18n-attr="aria-label:landhaLink"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </li>
+        <li class="pcard tone-green">
+          <h3 data-i18n="furnitureTitle">Admin de tienda de muebles</h3>
+          <p data-i18n="furnitureCard">Dashboard para gestionar productos, pedidos y ventas de una tienda de accesorios.</p>
+          <div class="pcard-media"><img data-speed="0.04" src="assets/muebles.svg" width="320" height="200" loading="lazy" alt="Ilustración del dashboard de ventas" data-i18n-attr="alt:furnitureThumb"></div>
+          <a class="pcard-link" href="https://github.com/RenzoVillafuerteTapia/furniture-store-admin-app" rel="noopener" aria-label="Ver el dashboard en GitHub" data-i18n-attr="aria-label:furnitureLink"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </li>
+        <li class="pcard tone-red">
+          <h3 translate="no">VetCare</h3>
+          <p data-i18n="loginCard">El acceso del personal: inicio de sesión, activación de cuenta e invitaciones por rol.</p>
+          <div class="pcard-media"><img data-speed="0.04" src="assets/vetcare-login.webp" width="2160" height="1350" loading="lazy" alt="Captura del inicio de sesión de VetCare" data-i18n-attr="alt:shotLoginAlt"></div>
+          <a class="pcard-link" href="#vetcare" aria-label="Ver cómo está hecho VetCare" data-i18n-attr="aria-label:loginLink"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </li>
+        <li class="pcard tone-ink">
+          <h3 translate="no">GitHub</h3>
+          <p data-i18n="githubCard">El resto de mis repositorios públicos, con su código y su historial.</p>
+          <div class="pcard-media pcard-media-icon"><svg data-speed="0.04" aria-hidden="true"><use href="#i-hex"/></svg></div>
+          <a class="pcard-link" href="https://github.com/RenzoVillafuerteTapia" rel="noopener me" aria-label="Ver mi perfil de GitHub" data-i18n-attr="aria-label:githubLink"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </li>
+      </ul>
+      <div class="wrap rail-controls">
+        <div class="rail-dots" id="rail-dots" aria-hidden="true"></div>
+        <div class="rail-buttons">
+          <button type="button" class="round-button" id="rail-prev" aria-label="Proyecto anterior" data-i18n-attr="aria-label:railPrev"><svg aria-hidden="true"><use href="#i-back"/></svg></button>
+          <button type="button" class="round-button" id="rail-next" aria-label="Proyecto siguiente" data-i18n-attr="aria-label:railNext"><svg aria-hidden="true"><use href="#i-next"/></svg></button>
+        </div>
       </div>
     </section>
 
-    <section class="section wrap" id="proyectos" aria-labelledby="h-proyectos">
-      <h2 id="h-proyectos" class="reveal" data-i18n="projectsTitle">Proyectos</h2>
+    <section class="section inside" id="vetcare" aria-labelledby="h-vetcare">
+      <div class="wrap inside-grid">
+        <div class="inside-copy reveal">
+          <h2 id="h-vetcare" data-i18n="insideTitle">VetCare por dentro</h2>
+          <p data-i18n="vetBody">La API es un monolito modular con arquitectura hexagonal. La web y la app usan tipos TypeScript generados desde el contrato OpenAPI, y el CI impide fusionar un cambio de la API sin actualizarlos.</p>
+          <p class="status" data-i18n="vetStatus">v0.1.0: autenticación, roles y permisos funcionando en API, web y app móvil.</p>
+          <ul class="chips" translate="no">
+            <li>FastAPI</li><li>SQLAlchemy</li><li>MySQL 8</li><li>React</li><li>TypeScript</li><li>Expo</li><li>Docker</li><li>AWS</li><li>GitHub Actions</li>
+          </ul>
+          <a class="btn btn-light" href="https://github.com/RenzoVillafuerteTapia/vetcare" rel="noopener" data-i18n="vetLink">Ver VetCare en GitHub</a>
+        </div>
 
-      <div class="cards">
-        <article class="card card-wide reveal">
-          <div class="thumb">
-            <img data-speed="0.06" src="assets/vetcare-inicio.webp" width="2160" height="1350" alt="Captura del panel de inicio de la web de administración de VetCare" data-i18n-attr="alt:vetThumb">
-          </div>
-          <div class="card-body">
-            <h3 translate="no">VetCare</h3>
-            <p class="card-lead" data-i18n="vetLead">Plataforma para una veterinaria: una web de administración para el personal y una app móvil para los dueños de las mascotas, conectadas a una API común.</p>
-            <p data-i18n="vetBody">La API es un monolito modular con arquitectura hexagonal. La web y la app usan tipos TypeScript generados desde el contrato OpenAPI, y el CI impide fusionar un cambio de la API sin actualizarlos.</p>
-            <p class="status" data-i18n="vetStatus">v0.1.0: autenticación, roles y permisos funcionando en API, web y app móvil.</p>
-            <ul class="chips" translate="no">
-              <li>FastAPI</li><li>SQLAlchemy</li><li>MySQL 8</li><li>React</li><li>TypeScript</li><li>Expo</li><li>Docker</li><li>AWS</li><li>GitHub Actions</li>
-            </ul>
-            <a class="btn btn-solid" href="https://github.com/RenzoVillafuerteTapia/vetcare" rel="noopener" data-i18n="vetLink">Ver VetCare en GitHub</a>
-          </div>
-        </article>
-
-        <ul class="shots">
-          <li class="reveal" style="--d:0">
-            <figure>
-              <a class="shot" href="assets/vetcare-login.webp"><img data-speed="0.05" src="assets/vetcare-login.webp" width="2160" height="1350" loading="lazy" alt="Captura del inicio de sesión de VetCare" data-i18n-attr="alt:shotLoginAlt"></a>
-              <figcaption data-i18n="shotLogin">VetCare: inicio de sesión</figcaption>
-            </figure>
-          </li>
-          <li class="reveal" style="--d:1">
-            <figure>
-              <a class="shot" href="assets/vetcare-invitar.webp"><img data-speed="0.05" src="assets/vetcare-invitar.webp" width="2160" height="1350" loading="lazy" alt="Captura del formulario para invitar usuarios por rol en VetCare" data-i18n-attr="alt:shotInviteAlt"></a>
-              <figcaption data-i18n="shotInvite">VetCare: invitar al equipo por rol</figcaption>
-            </figure>
-          </li>
-        </ul>
-
-        <article class="card reveal" style="--d:0">
-          <div class="thumb">
-            <svg data-speed="0.07" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustración: panel web de LandhaApp" data-i18n-attr="aria-label:landhaThumb">
-              <rect width="320" height="200" fill="#FBE3D6"/>
-              <rect x="34" y="28" width="252" height="156" rx="10" fill="#fff"/>
-              <path d="M34 38a10 10 0 0 1 10-10h34v156H44a10 10 0 0 1-10-10z" fill="#153F4B"/>
-              <path d="M44 48h24M44 64h18M44 78h22M44 92h16" stroke="#6FA3AF" stroke-width="4" stroke-linecap="round"/>
-              <rect x="90" y="42" width="56" height="34" rx="6" fill="#E8F1F0"/>
-              <rect x="154" y="42" width="56" height="34" rx="6" fill="#FBEBC7"/>
-              <rect x="218" y="42" width="56" height="34" rx="6" fill="#F8DAD6"/>
-              <path d="M98 54h22M162 54h22M226 54h22" stroke="#24687A" stroke-width="5" stroke-linecap="round"/>
-              <rect x="90" y="88" width="184" height="84" rx="6" fill="#F4F8F8"/>
-              <path d="m100 154 28-22 24 10 30-34 26 16 34-30" fill="none" stroke="#24687A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="182" cy="108" r="5" fill="#D9473F"/>
+        <figure class="diagram reveal" data-reveal="right" aria-labelledby="diagram-caption">
+          <div class="diagram-grid" id="diagram">
+            <svg class="edges" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <line data-from="web" data-to="api" x1="27.33" y1="9.76" x2="36.33" y2="32"/>
+              <line data-from="mobile" data-to="api" x1="27.33" y1="63.41" x2="36.33" y2="41"/>
+              <line data-from="api" data-to="s3" x1="63.67" y1="31" x2="72.67" y2="9.76"/>
+              <line data-from="api" data-to="db" x1="63.67" y1="35" x2="72.67" y2="35"/>
+              <line data-from="worker" data-to="db" x1="63.67" y1="87" x2="72.67" y2="42"/>
+              <line data-from="worker" data-to="push" x1="63.67" y1="90.24" x2="72.67" y2="90.24"/>
             </svg>
-          </div>
-          <div class="card-body">
-            <h3 translate="no">LandhaApp</h3>
-            <p data-i18n="landhaBody">Aplicación web organizada por contextos de dominio: API en FastAPI con SQLAlchemy, Alembic y autenticación JWT, y un frontend en Vue 3 con Pinia y Vue Router.</p>
-            <ul class="chips" translate="no"><li>FastAPI</li><li>MySQL</li><li>Vue 3</li><li>Pinia</li><li>Vite</li></ul>
-            <a class="btn btn-outline" href="https://github.com/RenzoVillafuerteTapia/LandhaApp" rel="noopener" data-i18n="landhaLink">Ver LandhaApp en GitHub</a>
-          </div>
-        </article>
+            <span class="dot" data-from="web" data-to="api" style="left:36.33%;top:32%"></span>
+            <span class="dot" data-from="mobile" data-to="api" style="left:36.33%;top:41%"></span>
+            <span class="dot" data-from="api" data-to="s3" style="left:72.67%;top:9.76%"></span>
+            <span class="dot" data-from="api" data-to="db" style="left:72.67%;top:35%"></span>
+            <span class="dot" data-from="worker" data-to="db" style="left:72.67%;top:42%"></span>
+            <span class="dot" data-from="worker" data-to="push" style="left:72.67%;top:90.24%"></span>
 
-        <article class="card reveal" style="--d:1">
-          <div class="thumb">
-            <svg data-speed="0.07" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustración: dashboard de ventas de la tienda de muebles" data-i18n-attr="aria-label:furnitureThumb">
-              <rect width="320" height="200" fill="#D9EDE5"/>
-              <rect x="34" y="28" width="252" height="156" rx="10" fill="#fff"/>
-              <path d="M48 46h60" stroke="#153F4B" stroke-width="6" stroke-linecap="round"/>
-              <rect x="48" y="112" width="18" height="36" rx="4" fill="#7FB8C4"/>
-              <rect x="74" y="92" width="18" height="56" rx="4" fill="#24687A"/>
-              <rect x="100" y="70" width="18" height="78" rx="4" fill="#EDB63E"/>
-              <rect x="126" y="100" width="18" height="48" rx="4" fill="#7FB8C4"/>
-              <rect x="152" y="82" width="18" height="66" rx="4" fill="#24687A"/>
-              <path d="M44 150h132" stroke="#C9D8DB" stroke-width="2"/>
-              <rect x="192" y="62" width="80" height="18" rx="5" fill="#E8F1F0"/>
-              <rect x="192" y="86" width="80" height="18" rx="5" fill="#F4F8F8"/>
-              <rect x="192" y="110" width="80" height="18" rx="5" fill="#E8F1F0"/>
-              <rect x="192" y="134" width="80" height="18" rx="5" fill="#F4F8F8"/>
-              <circle cx="202" cy="71" r="4" fill="#D9473F"/><circle cx="202" cy="95" r="4" fill="#EDB63E"/><circle cx="202" cy="119" r="4" fill="#2F8F6F"/><circle cx="202" cy="143" r="4" fill="#24687A"/>
-              <path d="M212 71h46M212 95h36M212 119h42M212 143h30" stroke="#9DB9BF" stroke-width="4" stroke-linecap="round"/>
-            </svg>
+            <button type="button" class="node node-client" data-node="web" style="grid-area:1/1" aria-pressed="false">
+              <span class="node-name" translate="no">Web</span>
+              <span class="node-tech" translate="no">React + Vite</span>
+            </button>
+            <button type="button" class="node node-client" data-node="mobile" style="grid-area:3/1" aria-pressed="false">
+              <span class="node-name" data-i18n="nodeMobile">App móvil</span>
+              <span class="node-tech" translate="no">Expo</span>
+            </button>
+            <button type="button" class="node node-core" data-node="api" style="grid-area:2/2" aria-pressed="true">
+              <span class="node-name" translate="no">API</span>
+              <span class="node-tech" translate="no">FastAPI</span>
+            </button>
+            <button type="button" class="node node-core" data-node="worker" style="grid-area:4/2" aria-pressed="false">
+              <span class="node-name" translate="no">Worker</span>
+              <span class="node-tech" translate="no">Outbox</span>
+            </button>
+            <button type="button" class="node node-store" data-node="s3" style="grid-area:1/3" aria-pressed="false">
+              <span class="node-name" translate="no">S3</span>
+              <span class="node-tech" data-i18n="nodeS3Tech">Archivos</span>
+            </button>
+            <button type="button" class="node node-store" data-node="db" style="grid-area:2/3" aria-pressed="false">
+              <span class="node-name" translate="no">MySQL 8</span>
+              <span class="node-tech" data-i18n="nodeDbTech">Datos</span>
+            </button>
+            <button type="button" class="node node-store" data-node="push" style="grid-area:4/3" aria-pressed="false">
+              <span class="node-name" translate="no">Expo Push</span>
+              <span class="node-tech" data-i18n="nodePushTech">Avisos</span>
+            </button>
           </div>
-          <div class="card-body">
-            <h3 data-i18n="furnitureTitle">Admin de tienda de muebles</h3>
-            <p data-i18n="furnitureBody">Dashboard de administración para gestionar productos, pedidos y ventas de una tienda de accesorios para muebles.</p>
-            <ul class="chips"><li data-i18n="chipProducts">Productos</li><li data-i18n="chipOrders">Pedidos</li><li data-i18n="chipSales">Ventas</li></ul>
-            <a class="btn btn-outline" href="https://github.com/RenzoVillafuerteTapia/furniture-store-admin-app" rel="noopener" data-i18n="furnitureLink">Ver el dashboard en GitHub</a>
+
+          <div class="node-detail" aria-live="polite">
+            <p class="node-detail-title" id="detail-title">API</p>
+            <p class="node-detail-text" id="detail-text">Python 3.12, FastAPI, SQLAlchemy 2.0, Alembic y Pydantic v2. Un monolito modular con arquitectura hexagonal por bounded context.</p>
           </div>
-        </article>
+          <figcaption id="diagram-caption" data-i18n="diagramCaption">Arquitectura real de VetCare. Toca cada pieza para ver cómo está hecha.</figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="section stack" id="stack" aria-labelledby="h-stack">
       <div class="wrap">
-        <h2 id="h-stack" class="reveal" data-i18n="stackTitle">Con qué trabajo</h2>
-        <p class="section-intro reveal" data-i18n="stackIntro">Todo lo que aparece aquí está en uso en alguno de mis repositorios.</p>
-        <div class="stack-groups">
-          <div class="stack-card reveal" style="--d:0">
+        <h2 class="reveal" id="h-stack" data-i18n="stackTitle">Con qué trabajo</h2>
+        <div class="stack-cols">
+          <div class="reveal" style="--d:0">
             <h3 translate="no">Backend</h3>
-            <ul class="chips" translate="no"><li>Python</li><li>FastAPI</li><li>SQLAlchemy</li><li>Alembic</li><li>Pydantic</li><li>MySQL</li><li>C#</li></ul>
+            <ul translate="no"><li>Python</li><li>FastAPI</li><li>SQLAlchemy</li><li>Alembic</li><li>Pydantic</li><li>MySQL</li><li>C#</li></ul>
           </div>
-          <div class="stack-card reveal" style="--d:1">
+          <div class="reveal" style="--d:1">
             <h3 translate="no">Web</h3>
-            <ul class="chips" translate="no"><li>TypeScript</li><li>React</li><li>Vue 3</li><li>Vite</li><li>TanStack Query</li><li>Tailwind</li></ul>
+            <ul translate="no"><li>TypeScript</li><li>React</li><li>Vue 3</li><li>Vite</li><li>TanStack Query</li><li>Tailwind</li></ul>
           </div>
-          <div class="stack-card reveal" style="--d:2">
+          <div class="reveal" style="--d:2">
             <h3 data-i18n="stackMobile">Móvil</h3>
-            <ul class="chips" translate="no"><li>React Native</li><li>Expo</li><li>Kotlin</li></ul>
+            <ul translate="no"><li>React Native</li><li>Expo</li><li>Kotlin</li></ul>
           </div>
-          <div class="stack-card reveal" style="--d:3">
+          <div class="reveal" style="--d:3">
             <h3 data-i18n="stackPractices">Arquitectura y entrega</h3>
-            <ul class="chips"><li data-i18n="stackHex">Arquitectura hexagonal</li><li translate="no">DDD</li><li translate="no">OpenAPI</li><li translate="no">Docker</li><li translate="no">GitHub Actions</li><li translate="no">AWS</li></ul>
+            <ul><li data-i18n="stackHex">Arquitectura hexagonal</li><li translate="no">DDD</li><li translate="no">OpenAPI</li><li translate="no">Docker</li><li translate="no">GitHub Actions</li><li translate="no">AWS</li></ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section contact" id="contacto" aria-labelledby="h-contacto">
-      <div class="wrap contact-grid">
-        <div class="contact-visual reveal" data-reveal="zoom" aria-hidden="true">
-          <span class="blob blob-contact" data-speed="-0.1" data-rotate="-0.03"></span>
-          <svg class="contact-icon" data-speed="0.14"><use href="#i-mail"/></svg>
-          <span class="bubble bubble-d" data-speed="0.3"></span>
-        </div>
-        <div class="contact-copy reveal" data-reveal="right">
-          <h2 id="h-contacto" data-i18n="contactTitle">Hablemos</h2>
-          <p data-i18n="contactLead">Busco prácticas y proyectos donde seguir aprendiendo. Escríbeme por cualquiera de estos medios.</p>
-          <ul class="contact-list">
-            <li><a href="mailto:renzovillata@gmail.com" translate="no">renzovillata@gmail.com</a></li>
-            <li><a href="https://www.linkedin.com/in/renzo-villafuerte-tapia/" rel="noopener me" translate="no">LinkedIn</a></li>
-            <li><a href="https://github.com/RenzoVillafuerteTapia" rel="noopener me" translate="no">GitHub</a></li>
-          </ul>
-          <a class="btn btn-solid" href="mailto:renzovillata@gmail.com" data-i18n="contactCta">Enviar un correo</a>
+    <section class="section cta" id="contacto" aria-labelledby="h-contacto">
+      <div class="wrap">
+        <h2 class="cta-title reveal" id="h-contacto" data-i18n="contactTitle">Escríbeme y conversamos</h2>
+        <div class="cta-row reveal" style="--d:1">
+          <a class="btn btn-light" href="mailto:renzovillata@gmail.com" data-i18n="contactCta">Enviar un correo</a>
+          <p data-i18n="contactLead">Busco prácticas y proyectos donde seguir aprendiendo.</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-row">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <span class="footer-mark" aria-hidden="true"></span>
+        <p class="footer-tagline" data-i18n="footerTagline">De la API a la app móvil</p>
+      </div>
+      <div>
+        <h2 data-i18n="footerSections">Secciones</h2>
+        <ul>
+          <li><a href="#sobre" data-i18n="navAbout">Sobre mí</a></li>
+          <li><a href="#proyectos" data-i18n="navProjects">Proyectos</a></li>
+          <li><a href="#vetcare" translate="no">VetCare</a></li>
+          <li><a href="#stack" data-i18n="navStack">Stack</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 data-i18n="navProjects">Proyectos</h2>
+        <ul translate="no">
+          <li><a href="https://github.com/RenzoVillafuerteTapia/vetcare" rel="noopener">VetCare</a></li>
+          <li><a href="https://github.com/RenzoVillafuerteTapia/LandhaApp" rel="noopener">LandhaApp</a></li>
+          <li><a href="https://github.com/RenzoVillafuerteTapia/furniture-store-admin-app" rel="noopener">Furniture Store Admin</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 data-i18n="navContact">Contacto</h2>
+        <ul translate="no">
+          <li><a href="mailto:renzovillata@gmail.com">renzovillata@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/renzo-villafuerte-tapia/" rel="noopener me">LinkedIn</a></li>
+          <li><a href="https://github.com/RenzoVillafuerteTapia" rel="noopener me">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-bar">
       <p><span translate="no">Renzo Villafuerte Tapia</span>, 2026</p>
-      <ul class="footer-links">
-        <li><a href="#proyectos" data-i18n="navProjects">Proyectos</a></li>
-        <li><a href="#stack" data-i18n="navStack">Stack</a></li>
-        <li><a href="#contacto" data-i18n="navContact">Contacto</a></li>
-      </ul>
     </div>
   </footer>
 

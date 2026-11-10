@@ -122,11 +122,11 @@
 
     <section class="section wrap" id="sobre" aria-labelledby="h-sobre">
       <div class="about-card">
-        <div class="collage" aria-hidden="true">
-          <div class="tile tile-a reveal" data-reveal="zoom" style="--d:0"><svg data-speed="0.10"><use href="#i-code"/></svg></div>
-          <div class="tile tile-b reveal" data-reveal="zoom" style="--d:1"><svg data-speed="-0.08"><use href="#i-hex"/></svg></div>
-          <div class="tile tile-c reveal" data-reveal="zoom" style="--d:2"><svg data-speed="-0.10"><use href="#i-mobile"/></svg></div>
-          <div class="tile tile-d reveal" data-reveal="zoom" style="--d:3"><svg data-speed="0.08"><use href="#i-db"/></svg></div>
+        <div class="collage">
+          <div class="tile tile-a reveal" data-reveal="zoom" style="--d:0"><svg aria-hidden="true" data-speed="0.10"><use href="#i-code"/></svg></div>
+          <div class="tile tile-b reveal" data-reveal="zoom" style="--d:1"><svg aria-hidden="true" data-speed="-0.08"><use href="#i-hex"/></svg></div>
+          <div class="tile tile-c reveal" data-reveal="zoom" style="--d:2"><svg aria-hidden="true" data-speed="-0.10"><use href="#i-mobile"/></svg></div>
+          <div class="tile tile-d reveal" data-reveal="zoom" style="--d:3"><img data-speed="0.05" src="assets/renzo.png" width="187" height="184" alt="Foto de Renzo Villafuerte Tapia" data-i18n-attr="alt:photoAlt"></div>
         </div>
         <div class="about-copy reveal" data-reveal="right">
           <h2 id="h-sobre" data-i18n="aboutTitle">Sobre mí</h2>
@@ -165,25 +165,7 @@
       <div class="cards">
         <article class="card card-wide reveal">
           <div class="thumb">
-            <svg data-speed="0.07" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustración: agenda de la web de administración y la app móvil de VetCare" data-i18n-attr="aria-label:vetThumb">
-              <rect width="320" height="200" fill="#CFE4EB"/>
-              <rect x="24" y="28" width="226" height="156" rx="10" fill="#fff"/>
-              <path d="M24 38a10 10 0 0 1 10-10h206a10 10 0 0 1 10 10v12H24z" fill="#24687A"/>
-              <circle cx="38" cy="39" r="3" fill="#EDB63E"/><circle cx="48" cy="39" r="3" fill="#fff" opacity=".7"/>
-              <rect x="24" y="50" width="44" height="134" fill="#E8F1F0"/>
-              <path d="M32 64h28M32 76h20M32 88h24M32 100h18" stroke="#9DB9BF" stroke-width="4" stroke-linecap="round"/>
-              <path d="M128 56v122M182 56v122" stroke="#E3ECEE" stroke-width="2"/>
-              <rect x="78" y="62" width="44" height="28" rx="5" fill="#EDB63E"/>
-              <rect x="78" y="128" width="44" height="34" rx="5" fill="#8CCBB3"/>
-              <rect x="134" y="92" width="42" height="42" rx="5" fill="#7FB8C4"/>
-              <rect x="188" y="66" width="34" height="24" rx="5" fill="#E58B84"/>
-              <rect x="188" y="120" width="34" height="44" rx="5" fill="#F3D48A"/>
-              <rect x="222" y="62" width="76" height="130" rx="14" fill="#153F4B"/>
-              <rect x="228" y="70" width="64" height="114" rx="9" fill="#fff"/>
-              <circle cx="244" cy="88" r="8" fill="#EDB63E"/>
-              <path d="M258 85h24M258 93h16M236 110h48M236 122h48M236 134h30" stroke="#B9CDD2" stroke-width="4" stroke-linecap="round"/>
-              <rect x="236" y="156" width="48" height="16" rx="5" fill="#24687A"/>
-            </svg>
+            <img data-speed="0.06" src="assets/vetcare-inicio.webp" width="2160" height="1350" alt="Captura del panel de inicio de la web de administración de VetCare" data-i18n-attr="alt:vetThumb">
           </div>
           <div class="card-body">
             <h3 translate="no">VetCare</h3>
@@ -196,6 +178,21 @@
             <a class="btn btn-solid" href="https://github.com/RenzoVillafuerteTapia/vetcare" rel="noopener" data-i18n="vetLink">Ver VetCare en GitHub</a>
           </div>
         </article>
+
+        <ul class="shots">
+          <li class="reveal" style="--d:0">
+            <figure>
+              <a class="shot" href="assets/vetcare-login.webp"><img data-speed="0.05" src="assets/vetcare-login.webp" width="2160" height="1350" loading="lazy" alt="Captura del inicio de sesión de VetCare" data-i18n-attr="alt:shotLoginAlt"></a>
+              <figcaption data-i18n="shotLogin">VetCare: inicio de sesión</figcaption>
+            </figure>
+          </li>
+          <li class="reveal" style="--d:1">
+            <figure>
+              <a class="shot" href="assets/vetcare-invitar.webp"><img data-speed="0.05" src="assets/vetcare-invitar.webp" width="2160" height="1350" loading="lazy" alt="Captura del formulario para invitar usuarios por rol en VetCare" data-i18n-attr="alt:shotInviteAlt"></a>
+              <figcaption data-i18n="shotInvite">VetCare: invitar al equipo por rol</figcaption>
+            </figure>
+          </li>
+        </ul>
 
         <article class="card reveal" style="--d:0">
           <div class="thumb">

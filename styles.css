@@ -585,3 +585,57 @@ html:not(.motion) .marquee-controls { display: none; }
 .motion .ticker p { animation: marquee 50s linear infinite; }
 .marquee-row, .ticker p, .about-photo img, .pcard-media img, .pcard-media-icon svg { will-change: auto; }
 .about-photo img, .pcard-media img { scale: 1; }
+
+/* ---------- Light version: white everywhere, same palette as accents ---------- */
+:root {
+  --base: #FFFFFF;
+  --base-deep: #FFFFFF;
+  --panel: #F1F5F6;
+  --text: #12303A;
+  --text-soft: #4C636A;
+  --hairline: rgba(21, 63, 75, 0.16);
+  color-scheme: light;
+}
+html { scrollbar-color: var(--teal) #FFFFFF; }
+:focus-visible { outline-color: var(--teal-deep); }
+.pcard :focus-visible { outline-color: #fff; }
+
+.skip-link { background: var(--teal-deep); color: #fff; }
+
+.btn-light { background: var(--teal-deep); color: #fff; }
+.btn-light:hover { background: var(--teal); color: #fff; }
+.link-button:hover { color: var(--teal-deep); }
+.round-button { border-color: rgba(21, 63, 75, 0.5); }
+.round-button:hover:not(:disabled) { background: var(--teal-deep); color: #fff; }
+
+.site-header { background: rgba(255, 255, 255, 0.9); border-bottom: 1px solid var(--hairline); }
+.wordmark::before, .footer-mark { background: var(--teal-deep); }
+
+.hero-lead { color: var(--text); }
+.hero-note a:hover { color: var(--teal); }
+.marquee-track li { border: 1px solid var(--hairline); }
+
+.about { background: transparent; color: var(--text); }
+.about h2 { color: var(--text); }
+.about-copy p { color: var(--text-soft); }
+.about-photo { background: var(--panel); }
+
+.rail-dots span { background: rgba(21, 63, 75, 0.3); }
+.rail-dots span.is-current { background: var(--teal-deep); }
+
+.inside-copy .status { color: var(--text); }
+.edges line { stroke: rgba(21, 63, 75, 0.3); }
+.edges line.is-active { stroke: var(--red); }
+.dot { background: #9DB5BB; }
+.dot.is-active { background: var(--red); }
+.node { color: var(--text); border-color: rgba(21, 63, 75, 0.5); }
+.node-client { color: #fff; border-color: var(--teal); }
+.node-core { background: #fff; border-color: var(--teal-deep); color: var(--teal-deep); }
+.node:hover { border-color: var(--red); }
+.node[aria-pressed="true"] { color: var(--ink); border-color: var(--mustard); }
+.node-detail { background: #fff; }
+
+.ticker p { -webkit-text-stroke-color: rgba(21, 63, 75, 0.45); }
+
+.site-footer { border-top: 1px solid var(--hairline); }
+.site-footer li a:hover { color: var(--teal-deep); }

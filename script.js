@@ -9,7 +9,7 @@
     navProjects: 'Projects',
     navStack: 'Stack',
     navContact: 'Contact',
-    heroTitle: 'Hi, I’m Renzo. I build complete systems, from the API to the mobile app.',
+    heroTitle: 'Hi, I’m Renzo. I build complete systems.',
     heroLead: 'Software Engineering student. APIs in FastAPI, web apps in React and Vue, and mobile apps with Expo and Kotlin.',
     ctaProjects: 'View projects',
     heroNote: 'Or write to me at',
@@ -54,6 +54,7 @@
     nodePushTech: 'Alerts',
     diagramCaption: 'The real architecture of VetCare. Tap each piece to see how it is built.',
     stackTitle: 'What I work with',
+    stackIntro: 'Everything listed here is in use in one of my repositories.',
     stackMobile: 'Mobile',
     stackPractices: 'Architecture & delivery',
     stackHex: 'Hexagonal architecture',
@@ -285,7 +286,7 @@
     return { el: el, anchor: el.parentElement, speed: parseFloat(el.dataset.speed) };
   });
   var shifters = all('[data-shift]').map(function (el) {
-    return { el: el, shift: parseFloat(el.dataset.shift) };
+    return { el: el, anchor: el.parentElement, shift: parseFloat(el.dataset.shift) };
   });
   var progress = document.getElementById('progress');
   var ticking = false;
@@ -303,11 +304,12 @@
       var offset = rect.top + rect.height / 2 - viewport / 2;
       m.el.style.transform = 'translate3d(0,' + (offset * m.speed).toFixed(1) + 'px,0)';
     });
-    if (scrolled < viewport * 2) {
-      shifters.forEach(function (s) {
-        s.el.style.transform = 'translate3d(' + (scrolled * s.shift).toFixed(1) + 'px,0,0)';
-      });
-    }
+    var shiftRects = shifters.map(function (s) { return s.anchor.getBoundingClientRect(); });
+    shifters.forEach(function (s, i) {
+      var rect = shiftRects[i];
+      if (rect.bottom < -300 || rect.top > viewport + 300) return;
+      s.el.style.transform = 'translate3d(' + ((viewport - rect.top) * s.shift * -1).toFixed(1) + 'px,0,0)';
+    });
     if (progress) progress.style.transform = 'scaleX(' + (max > 0 ? Math.min(scrolled / max, 1) : 0) + ')';
   }
 

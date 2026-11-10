@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script>(function () { var m = /[?&]motion=on/.test(location.search) || !matchMedia('(prefers-reduced-motion: reduce)').matches; document.documentElement.className = m ? 'js motion' : 'js'; })();</script>
+  <script>(function () { var m = !/[?&]motion=off/.test(location.search); document.documentElement.className = m ? 'js motion' : 'js'; })();</script>
 </head>
 <body>
   <div class="progress" id="progress" aria-hidden="true"></div>
@@ -48,7 +48,7 @@
   <main id="contenido">
     <section class="hero" id="inicio">
       <div class="wrap hero-copy">
-        <h1 data-i18n="heroTitle">Hola, soy Renzo. Construyo sistemas completos, de la API a la app móvil.</h1>
+        <h1 data-i18n="heroTitle">Hola, soy Renzo. Construyo sistemas completos.</h1>
         <p class="hero-lead" data-i18n="heroLead">Estudiante de Ingeniería de Software. APIs en FastAPI, web en React y Vue, y apps con Expo y Kotlin.</p>
         <a class="btn btn-light" href="#proyectos" data-i18n="ctaProjects">Ver proyectos</a>
         <p class="hero-note"><span data-i18n="heroNote">O escríbeme a</span> <a href="mailto:renzovillata@gmail.com" translate="no">renzovillata@gmail.com</a></p>
@@ -233,26 +233,30 @@
     </section>
 
     <section class="section stack" id="stack" aria-labelledby="h-stack">
+      <div class="ticker" aria-hidden="true"><p data-shift="0.45" translate="no"><span>Python</span><span class="is-solid">FastAPI</span><span>React</span><span>TypeScript</span><span>Vue</span><span class="is-solid">Expo</span><span>Kotlin</span><span>Docker</span><span>AWS</span><span class="is-solid">MySQL</span><span>Python</span><span>FastAPI</span><span>React</span><span class="is-solid">TypeScript</span><span>Vue</span><span>Expo</span><span>Kotlin</span><span class="is-solid">Docker</span><span>AWS</span><span>MySQL</span></p></div>
       <div class="wrap">
-        <h2 class="reveal" id="h-stack" data-i18n="stackTitle">Con qué trabajo</h2>
-        <div class="stack-cols">
-          <div class="reveal" style="--d:0">
-            <h3 translate="no">Backend</h3>
-            <ul translate="no"><li>Python</li><li>FastAPI</li><li>SQLAlchemy</li><li>Alembic</li><li>Pydantic</li><li>MySQL</li><li>C#</li></ul>
-          </div>
-          <div class="reveal" style="--d:1">
-            <h3 translate="no">Web</h3>
-            <ul translate="no"><li>TypeScript</li><li>React</li><li>Vue 3</li><li>Vite</li><li>TanStack Query</li><li>Tailwind</li></ul>
-          </div>
-          <div class="reveal" style="--d:2">
-            <h3 data-i18n="stackMobile">Móvil</h3>
-            <ul translate="no"><li>React Native</li><li>Expo</li><li>Kotlin</li></ul>
-          </div>
-          <div class="reveal" style="--d:3">
-            <h3 data-i18n="stackPractices">Arquitectura y entrega</h3>
-            <ul><li data-i18n="stackHex">Arquitectura hexagonal</li><li translate="no">DDD</li><li translate="no">OpenAPI</li><li translate="no">Docker</li><li translate="no">GitHub Actions</li><li translate="no">AWS</li></ul>
-          </div>
+        <div class="stack-head">
+          <h2 class="reveal" id="h-stack" data-i18n="stackTitle">Con qué trabajo</h2>
+          <p class="reveal" style="--d:1" data-i18n="stackIntro">Todo lo que aparece aquí está en uso en alguno de mis repositorios.</p>
         </div>
+        <dl class="stack-rows">
+          <div class="stack-row tone-gold reveal" style="--d:0">
+            <dt><span translate="no">Backend</span></dt>
+            <dd><ul class="tags"><li translate="no">Python</li><li translate="no">FastAPI</li><li translate="no">SQLAlchemy</li><li translate="no">Alembic</li><li translate="no">Pydantic</li><li translate="no">MySQL</li><li translate="no">C#</li></ul></dd>
+          </div>
+          <div class="stack-row tone-sky reveal" style="--d:1">
+            <dt><span translate="no">Web</span></dt>
+            <dd><ul class="tags"><li translate="no">TypeScript</li><li translate="no">React</li><li translate="no">Vue 3</li><li translate="no">Vite</li><li translate="no">TanStack Query</li><li translate="no">Tailwind</li></ul></dd>
+          </div>
+          <div class="stack-row tone-rose reveal" style="--d:2">
+            <dt><span data-i18n="stackMobile">Móvil</span></dt>
+            <dd><ul class="tags"><li translate="no">React Native</li><li translate="no">Expo</li><li translate="no">Kotlin</li></ul></dd>
+          </div>
+          <div class="stack-row tone-leaf reveal" style="--d:3">
+            <dt><span data-i18n="stackPractices">Arquitectura y entrega</span></dt>
+            <dd><ul class="tags"><li data-i18n="stackHex">Arquitectura hexagonal</li><li translate="no">DDD</li><li translate="no">OpenAPI</li><li translate="no">Docker</li><li translate="no">GitHub Actions</li><li translate="no">AWS</li></ul></dd>
+          </div>
+        </dl>
       </div>
     </section>
 
